@@ -1,3 +1,13 @@
+## Update (July 13, 2025)
+
+- Imported and used PNG images and GIFs from the provided `public/assets` and `public/gif` folders.
+- Updated components to display and align these assets correctly.
+- Refactored `TextComponent` to include `FrameComponent` and an arrow icon in the button.
+- Ensured proper layout and styling for all updated components.
+- Verified asset paths and optimized their usage in the UI.
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
