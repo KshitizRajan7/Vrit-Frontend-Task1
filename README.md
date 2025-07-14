@@ -1,3 +1,8 @@
+## Update (July 14, 2025)
+
+- Implemented all components as shown in one of the provided images, following the design specifications.
+- Added fade in and out animation for content using global CSS.
+
 ## Update (July 13, 2025)
 
 - Imported and used PNG images and GIFs from the provided `public/assets` and `public/gif` folders.
