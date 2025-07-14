@@ -10,7 +10,7 @@ const TextHover = () => {
                 className="w-[97px] h-[97px] top-[6px] left-[106px] absolute opacity-100 rounded-[32px] "
                 alt="Cropped Image"
             />
-       
+
             {/* tooltip - shown on hover */}
             <div className="absolute top-[31px] left-[86px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className='flex'>
@@ -39,7 +39,7 @@ const TextHover = () => {
                             <div className="flex flex-col w-[110px] h-[15px] gap-[4px]">
                                 <div className="flex w-[110px] justify-between">
                                     {/* animated amazing text */}
-                                    <p className="w-[110px] text-[12px] leading-[12px] font-normal text-[#2B2B2B] font-outfit animate-fadeCycle">
+                                    <p className="w-[150px] text-[12px] leading-[12px] font-normal text-[#2B2B2B] font-outfit animate-fadeCycle">
                                         Amazing ⭐⭐⭐⭐⭐
                                     </p>
                                     <div className="w-[16px] h-[16px]">
