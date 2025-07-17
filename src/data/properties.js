@@ -7,7 +7,8 @@ export const image3Props = {
   showAction: false,
   showClose: false,
   title: "⭐⭐⭐⭐⭐",
-  titleWidth: 60,
+  text:12,
+  titleWidth: 75,
   titleHeight: 12
 };
 
@@ -20,7 +21,8 @@ export const image6Props = {
   showAction: false,
   showClose: false,
   title: "Amazing⭐⭐⭐⭐⭐",
-  titleWidth: 120,
+  text:12,
+  titleWidth: 127,
   titleHeight: 15
 };
 
@@ -34,7 +36,8 @@ export const image6TextProps = {
   showAction: false,
   showClose: false,
   title: "I was amazed and impressed by the course structure as it was distinctly different from other courses in the market. The classes were highly interactive and the instructor was very humble and friendly. Recordings of the classes were provided within a short time after each class, which made revision very easy and beneficial. I have recommended the same course to my data-enthusiast friends.",
-  changeDescription: "Rajesh Dhakal\nDigital Marketing Student",
-  titleWidth: 27.57647132873535,
+  changeDescription: `Rajesh Dhakal\nDigital Marketing Student`,
+  text:1.2,
+  titleWidth: 27,
   titleHeight: 8,
 };
