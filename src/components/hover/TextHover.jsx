@@ -1,14 +1,18 @@
+
 import React from 'react'
 import DynamicComponent from '../dynamic/DynamicComponent'
 import { image6Props, image6TextProps } from '@/data/properties'
 
-const TextHover = () => {
+const TextHover = ({ hovered }) => {
     return (
-        <div className='w-[97px] h-[97px] top-[6px] left-[106px] absolute'>
+        <div className={`w-[97px] h-[97px] top-[6px] left-[106px] absolute transition-all duration-300 rounded-[32px] ${hovered
+            ? 'rounded-2xl shadow-[0_0_25px_rgba(34,197,94,5)]'
+            : ''}`}>
 
-            <div className='inline-flex top-[55px] left-[20px] absolute'>
+            {hovered && (<div className={`inline-flex top-[55px] left-[20px] absolute 
+                    `}  >
                 <DynamicComponent {...image6TextProps} />
-            </div>
+            </div>)}
 
 
             <div className={`inline-flex  absolute top-[31px] left-[86px] w-fit h-fit`}>

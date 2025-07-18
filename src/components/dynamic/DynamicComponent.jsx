@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const DynamicComponent = ({ videoHeight, videoWidth, text, color, direction, pointerPosition, description, showTitle, showAction, showClose = true, title, changeDescription, className, titleWidth, titleHeight }) => {
     const pointerPositions = ["First", "Middle", "Last"];
