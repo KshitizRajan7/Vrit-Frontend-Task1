@@ -6,6 +6,7 @@
 - Integrated video into the respective tooltip component  
 - Implemented mute icon on the video player  
 - Adjusted pointer rendering for all directions (`top`, `left`, `right`, `bottom`)  
+- **Added animation and transition effects on hover for TextHover and VideoHover components**
 
 ---
 
@@ -18,6 +19,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - **Dynamic component rendering** with support for custom titles, directional arrows, and pointer positions  
 - **Video integration** with mute icon and autoplay behavior  
 - **Pointer support for all directions** including `top`, `left`, `right`, and `bottom`  
+- **Hover-triggered animation and transition** for `TextHover` and `VideoHover` with bounce and movement effects  
 - Added `fadeCycle` animation using global CSS for smooth fade-in/fade-out transitions  
 - Designed and implemented all components as shown in provided reference images  
 - Supports PNG, GIF, and MP4 assets from `public/assets` and `public/gif` folders  
