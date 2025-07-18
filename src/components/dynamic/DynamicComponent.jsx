@@ -1,13 +1,12 @@
 import React from 'react'
 
-const DynamicComponent = ({ text, color, direction, pointerPosition, description, showTitle, showAction, showClose = true, title, changeDescription, className, titleWidth, titleHeight }) => {
+const DynamicComponent = ({ videoHeight, videoWidth, text, color, direction, pointerPosition, description, showTitle, showAction, showClose = true, title, changeDescription, className, titleWidth, titleHeight }) => {
     const pointerPositions = ["First", "Middle", "Last"];
     const directions = ["top", "left", "right", " bottom"];
-    const bgColor = `bg-${color.toLowerCase()}`;
-    const textSize = `text-[${text}px]`;
-    const width = `w-[${titleWidth}px]`;
-    const height = `h-[${titleHeight}px]`;
-
+    let bgColor = '';
+    if (color) {
+        bgColor = `${color.toLowerCase()}`;
+    }
 
     // // this will provide the pointer according to the direction and pointerPosition
 
@@ -45,7 +44,8 @@ const DynamicComponent = ({ text, color, direction, pointerPosition, description
     return (
         <div className='inline-flex'>
             {/* dynamic content */}
-            <div className='inline-flex flex-col justify-start gap-y-2' >
+            {/* left frame */}
+            {direction == "Left" && (<div className='inline-flex flex-col justify-start gap-y-2' >
                 {pointerPositions.map((position) => {
                     const isVisible = position === pointerPosition;
                     return (
@@ -53,23 +53,40 @@ const DynamicComponent = ({ text, color, direction, pointerPosition, description
                             {isVisible ? (
                                 <div className='w-0 h-0 border-t-[8px] border-b-[8px] border-r-[8px] border-t-transparent border-b-transparent border-r-white'></div>
                             ) : (
-                                <div className='w-[8px] h-[0px]' />
+                                <div className='w-[8px] h-[1px]' />
                             )}
                         </div>
                     );
                 })}
-            </div>
+            </div>)}
+
 
             {/* container */}
-            <div className={`inline-flex flex-col ${bgColor} shadow-lg rounded-[8px]`}>
+            <div className={`inline-flex flex-col shadow-lg rounded-[8px]`} >
+                {/* top frame */}
+                {direction == "Top" && (<div className='inline-flex'>
+                    {pointerPositions.map((position) => {
+                        const isVisible = position === pointerPosition;
+                        return (
+                            <div key={position} className='inline-flex items-center justify-start'>
+                                {isVisible ? (
+                                    <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-b-[8px] 
+                        border-l-transparent border-r-transparent border-b-white" />) : (
+                                    <div className='w-[14px] h-[0px]' />
+                                )}
+                            </div>
+                        );
+                    })}
+                </div>)}
                 {/* content  */}
-                <div className='inline-flex flex-col w-fit rounded-[8px] p-[10px] gap-[1px]'>
+                <div></div>
+                <div className='inline-flex flex-col w-fit rounded-[8px] p-[10px] gap-[1px]' style={{ backgroundColor: `${bgColor}` }}>
                     {/* text */}
                     <div className='inline-flex flex-col gap-[4px]  items-center justify-center'>
                         {/* Title  */}
                         <div className='inline-flex w-fit'>
                             {/* title */}
-                            <p
+                            {title && (<p
                                 className="font-outfit font-normal leading-[100%] tracking-normal"
                                 style={{
                                     fontSize: `${text}px`,
@@ -78,11 +95,31 @@ const DynamicComponent = ({ text, color, direction, pointerPosition, description
                                 }}
                             >
                                 {title || "N"}
-                            </p>
-                            {/* Icon */}
-                            {showClose && (<div className='inline-flex w-[1.51px] h-[1.51px] border-[0.11px] border-[#6B7280] relative'>
-                                <p className='text-[2px] w-[0.75px] h-[0.75px] top-[-1px] left-[0px] absolute '>x</p>
-                            </div>)}
+                            </p>)}
+                            {/* video */}
+                            {videoHeight && videoWidth && (
+                                <div
+                                    style={{
+                                        width: `${videoWidth}px`,
+                                        height: `${videoHeight}px`,
+                                    }}
+                                >
+                                    <video
+                                        controls
+                                        autoPlay
+                                        loop
+                                        muted
+                                        style={{ width: "100%", height: "100%" }}
+                                    >
+                                        <source src="/assets/videos/video.mp4" type="video/mp4" />
+                                    </video>
+                                    {/* mute Icon */}
+                                    <p className='absolute bottom-3 right-3 border-[0.5px] border-white text-center text-white w-[3px] h-[5px] text-[2px]'>
+                                        x
+                                    </p>
+                                </div>
+                            )}
+
 
                         </div>
                         {/* subtext */}
@@ -108,7 +145,6 @@ const DynamicComponent = ({ text, color, direction, pointerPosition, description
                             <p class="font-medium w-[7px] h-[2px] text-[1.2px] leading-[100%] text-center align-middle font-inter ">
                                 ButtonCTA
                             </p>
-
                             {/* icon right */}
                             <div className='inline-flex'>
                                 <div className='w[1.51px] h-[1.51px] rounded-[0.38px] opacity-[20%]' />
@@ -116,7 +152,38 @@ const DynamicComponent = ({ text, color, direction, pointerPosition, description
                         </button>
                     </div>)}
                 </div>
+                {/* bottom frame */}
+                {direction == "bottom" && (<div className='inline-flex'>
+                    {pointerPositions.map((position) => {
+                        const isVisible = position === pointerPosition;
+                        return (
+                            <div key={position} className='inline-flex items-center justify-start'>
+                                {isVisible ? (
+                                    <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-t-[8px] 
+                        border-l-transparent border-r-transparent border-t-white" />) : (
+                                    <div className='w-[14px] h-[0px]' />
+                                )}
+                            </div>
+                        );
+                    })}
+                </div>)}
             </div>
+
+            {/* right frame */}
+            {direction == "Right" && (<div className='inline-flex flex-col justify-start gap-y-2' >
+                {pointerPositions.map((position) => {
+                    const isVisible = position === pointerPosition;
+                    return (
+                        <div key={position} className='inline-flex items-center justify-start'>
+                            {isVisible ? (
+                                <div className='w-0 h-0 border-t-[8px] border-b-[8px] border-l-[8px] border-t-transparent border-b-transparent border-l-white'></div>
+                            ) : (
+                                <div className='w-[8px] h-[9px]' />
+                            )}
+                        </div>
+                    );
+                })}
+            </div>)}
         </div>
     )
 }
