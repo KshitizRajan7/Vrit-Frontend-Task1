@@ -1,12 +1,9 @@
 # Tooltip & Testimonial UI - Next.js Project
 
-> 🎯 **Recent Update (2025-07-18)**
-
-- Saved `video.mp4` in the `/public/assets` directory  
-- Integrated video into the respective tooltip component  
-- Implemented mute icon on the video player  
-- Adjusted pointer rendering for all directions (`top`, `left`, `right`, `bottom`)  
-- **Added animation and transition effects on hover for TextHover and VideoHover components**
+> 🎯 **Recent Update (2025-07-19)**  
+- Created `floatUpDown` keyframe animation in global CSS for floating image effect  
+- Implemented hover translation to move testimonial images outside the `TestimonialMiddle` component  
+- Enhanced image motion and interactivity on hover for a dynamic user experience  
 
 ---
 
@@ -16,17 +13,16 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## ✨ Features
 
-- **Dynamic component rendering** with support for custom titles, directional arrows, and pointer positions  
-- **Video integration** with mute icon and autoplay behavior  
-- **Pointer support for all directions** including `top`, `left`, `right`, and `bottom`  
-- **Hover-triggered animation and transition** for `TextHover` and `VideoHover` with bounce and movement effects  
-- Added `fadeCycle` animation using global CSS for smooth fade-in/fade-out transitions  
-- Designed and implemented all components as shown in provided reference images  
-- Supports PNG, GIF, and MP4 assets from `public/assets` and `public/gif` folders  
-- Responsive layout and proper alignment for all components  
-- Refactored `TextComponent` to include nested `FrameComponent` and an action button with an arrow icon  
-- Modular and maintainable component structure using prop-based logic  
-- Verified and optimized all asset paths for use across components  
+- **Dynamic tooltip & testimonial components** with customizable titles, directional arrows, and pointer positions  
+- **Video integration** with mute icon, autoplay, loop, and hover interactions  
+- **Directional pointer support** (`top`, `left`, `right`, `bottom`) rendered with pixel-perfect accuracy  
+- **Hover-based animations** using `floatUpDown` keyframes for smooth vertical image floating  
+- **Image translation on hover** in `TestimonialMiddle` to shift visuals outside the component dynamically  
+- `fadeCycle` animation using global CSS for fade-in/fade-out transitions  
+- Clean and modular React component structure with prop-based logic  
+- Responsive and visually aligned layout matching design specifications  
+- Support for image, GIF, and video assets from `public/assets` and `public/gif`  
+- Refactored `TextComponent` includes nested layout, title, description, and a call-to-action arrow button  
 
 ---
 
