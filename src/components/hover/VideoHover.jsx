@@ -4,10 +4,10 @@ import { image3Props, image3VideoProps } from '@/data/properties'
 
 const VideoHover = ({ videoHovered }) => {
   return (
-    <div className={`w-[97px] h-[98px] top-[235px] left-[375px] absolute transition-all duration-300 rounded-[32px] ${videoHovered
+    <div className={`w-[97px] h-[98px] transition-all duration-300 rounded-[32px] ${videoHovered
       ? 'rounded-2xl shadow-[0_0_25px_rgba(34,197,94,5)]'
       : ''}`}>
-      {videoHovered && (<div className='inline-flex -top-[400px] -left-[50px] absolute'>
+      {videoHovered && (<div className='inline-flex -top-[400px] -left-[50px] absolute animate-fadeInUp'>
         <DynamicComponent {...image3VideoProps} />
       </div>)}
       <div className='inline-flex top-[41px] left-[85px] absolute '>
